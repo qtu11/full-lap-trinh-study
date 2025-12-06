@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 1</title>
+<style>
+<!--
+span.content
+	{}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+.titlefont {FONT-SIZE: 14px; FONT-WEIGHT: bold; FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #000000}
+-->
+</style>
+</head>
+
+<body bgcolor="#F4F7FB">
+<!-- START: Outermost table -->
+<TABLE BORDER="0" CELLPADDING="2" CELLSPACING="0" WIDTH="600" BGCOLOR="#F4F7FB" ALIGN="LEFT" height="278">
+  <TR>
+   <!-- <TD WIDTH="100%" BGCOLOR="#DDE2C6">-->
+	 <TD WIDTH="600" BGCOLOR="#336666" height="274">
+  <!-- START: Innertable -->  
+	<TABLE WIDTH="612" BORDER="0"  CELLPADDING="3" CELLSPACING=0 BGCOLOR="#F4F7FB" ALIGN="LEFT" height="385">    
+		<TR BGCOLOR="#F4F7FB">
+	  		<TD BGCOLOR="#F4F7FB" height="328" width="607">
+			<!-- START: TOP LEFT IMAGE AND TEXT TABLE -->	  	
+			<table border=0 cellpadding=3 cellspacing=0 width="608" bgcolor="#F4F7FB" align="left" height="162">
+			<tr>
+				<td width="480" align="center" valign="top" height="53">
+                    <div class="titlefont" style="width: 375; height: 17">
+                      Configuring router to run SDM</div>
+                    <p><BR>
+				</td>
+				<td width="168" align="right" valign="top" height="53">
+				<img src="TOPLEFT.gif" width="87" height="47" border=0></td>
+			</tr>
+			<tr>
+				<td width="654" align="left" valign="top" colspan="2" height="62" >
+					<font face="Verdana" style="font-size: 9pt">Follow the instructions below to configure a router to run 
+                    SDM.</font><p><font face="Verdana" style="font-size: 9pt"><span class="content"><b>Step 1:
+                    </b></span></font></p>
+                    <ol style="margin-top: 0in; margin-bottom: 0in" start="1" type="a">
+                      <li class="MsoNormal">
+                      <font face="Verdana" style="font-size: 9pt"><span class="content">Connect to 
+                      your router using Telnet, SSH or via console. </span>
+                      </font></li>
+                      <li><span class="content">
+                      <font face="Verdana" style="font-size: 9pt">Enter the 
+                      global configuration mode using the command:</font></span><span class="183030009-04042006"><div>
+                        <span style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'">
+                        Router&gt;<strong>enable</strong> </span>
+                      </div>
+                      <div>
+                        <span style="font-size: 10pt; font-family: Courier New">
+                        Router#<strong>conf terminal</strong></span></div>
+                      <div>
+                        <span style="font-size: 10pt; font-family: Courier New">
+                        Router(config)#</span></div>
+                      </span>
+                      </li>
+                    </ol>
+                    <p><font face="Verdana" style="font-size: 9pt"><b>Step&nbsp;2 :</b></font></p>
+                    <p><font face="Verdana" style="font-size: 9pt">Enable the router's HTTP/HTTPS server, using the 
+                    following Cisco IOS commands: &nbsp;</font></p>
+                    <p>
+                    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;">
+                    Router(config)# ip <b>http server</b><br>
+                    <br>
+                    Router(config)# ip <b>http secure-server</b><br>
+                    <br>
+                    Router(config)# ip <b>http authentication local</b></span><b><span style="font-family:&quot;Courier New&quot;"><br>
+                    </span></b>
+                    <span style="font-family:&quot;Courier New&quot;"><br>
+                    </span><font face="Verdana" style="font-size: 9pt">Note:- HTTPS is enabled only for crypto enabled IOS images.
+                    </font></p>
+                    <p><font face="Verdana" style="font-size: 9pt"><b>Step&nbsp;3:</b></font></p>
+                    <p><font face="Verdana" style="font-size: 9pt">Create a user with privilege level 15.
+                    </font> </p>
+                    <p>
+                    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;">
+                    Router(config)# <b>username</b> &lt;username&gt; <b>privilege 15 
+                    password 0</b> &lt;password&gt;</span><br>
+                    <br>
+                    <font face="Verdana" style="font-size: 9pt">Note:- Replace &lt;username&gt; and &lt;password&gt; with the username 
+                    and password that you want to configure. </font> </p>
+                    <p><font face="Verdana" style="font-size: 9pt"><b>Step&nbsp;4:</b></font></p>
+                    <p><font face="Verdana" style="font-size: 9pt">Configure SSH and Telnet for local login and privilege 
+                    level 15: </font> </p>
+                    <p>
+                    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;">
+                    Router(config)# <b>line vty 0 4</b><br>
+                    <br>
+                    Router(config-line)# <b>privilege level 15</b><br>
+                    <br>
+                    Router(config-line)# <b>login local</b><br>
+                    <br>
+                    Router(config-line)# <b>transport input telnet</b><br>
+                    <br>
+                    Router(config-line)# <b>transport input telnet ssh</b><br>
+                    <br>
+                    Router(config-line)# <b>exit</b></span><br>
+                    <br>
+                    <font face="Verdana" style="font-size: 9pt">
+                    <b>Step&nbsp;5: </b>(Optional)<b> </b>Enable local logging to 
+                    support the log monitoring function: &nbsp;</font></p>
+                    <p>
+                    <span style="font-size: 10.0pt; font-family: Courier New">
+                    Router(config)# <b>logging buffered 51200 warning</b><br>
+                    <![if !supportLineBreakNewLine]><br>
+&nbsp;<![endif]></span></td>
+			</tr>			
+            </table>
+	  		<!-- END: TOP LEFT IMAGE AND TEXT TABLE -->
+	  		</TD>
+	  	</TR>
+	</TABLE>
+  <!-- END: Innertable -->  	  	
+	  	
+  	</TD>
+  </TR>
+</TABLE>
+<!-- END: Outermost table -->
+
+</body>
+
+</html>

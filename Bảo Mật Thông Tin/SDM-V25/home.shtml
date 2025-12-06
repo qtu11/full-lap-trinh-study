@@ -1,0 +1,32 @@
+<!-- // Copyright (c) 2004-2005 by Cisco Systems, Inc. -->
+<html>
+<head></head>
+<body>
+<form>
+<input type="hidden" name="DIRINFO" value="<!--#exec cmd='dir all-filesystems'-->">
+</form>
+</body>
+<script language="javascript">
+function findHomeDir() {
+    var form = document.forms[0];
+    var dirTxt = form.DIRINFO.value;
+    var pos = dirTxt.indexOf("home.tar");
+    var currentIndex = dirTxt.indexOf("Directory of");
+    var fsName = "";
+    while (currentIndex != -1) {
+        var searchStr = dirTxt.substring(currentIndex);
+        var fsName = searchStr.substring(13, searchStr.indexOf(":"));
+        currentIndex = dirTxt.indexOf("Directory of", currentIndex + 14);
+        if ((currentIndex > pos) || (currentIndex == -1)) {
+            return fsName + ":";
+        }
+    }
+    return "";
+}
+var homedir = findHomeDir();
+location.replace("/archive/" + homedir + "home/html/home_aux.shtml" + location.search);
+</script>
+<noscript>
+<h4><i>JavaScript is not enabled.  This application requires JavaScript.</i></h4>
+</noscript>
+</html>

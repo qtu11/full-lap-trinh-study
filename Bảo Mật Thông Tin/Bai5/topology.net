@@ -1,0 +1,87 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7201]
+    workingdir = C:\Users\LUONGX~1\AppData\Local\Temp
+    udp = 10101
+    [[2691]]
+        image = C:\Users\Luongxuannhat\Downloads\c2691-adventerprisek9-mz.124-16.image
+        idlepc = 0x60a311d4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R2]]
+        model = 2691
+        console = 2102
+        aux = 2502
+        f0/0 = nio_gen_eth:\device\npf_{fe556f14-42df-4943-81a2-3858186f7fd3}
+        f0/1 = nio_gen_eth:\device\npf_{427ab383-f61e-4f62-9554-40c3686dae3f}
+        cnfg = configs\R2.cfg
+        x = -220.0
+        y = -190.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "Win 7 vnet1"
+        x = -1.0
+        y = 89.0
+    [[NOTE 2]]
+        text = "2k12 vnet8"
+        x = -474.0
+        y = 70.0
+    [[NOTE 3]]
+        text = "ip 10.1.1.0/24"
+        x = -593.0
+        y = -119.0
+    [[NOTE 4]]
+        text = "10.2.2.0/24"
+        x = -75.0
+        y = -194.0
+    [[NOTE 5]]
+        text = "ip 10.2.2.20\nsubnet mark: /24\ngetway:10.2.2.1"
+        x = -7.0
+        y = 176.0
+    [[NOTE 6]]
+        text = "ip: 10.1.1.10\nsb: /24\ngetway: 10.1.1.1"
+        x = -547.0
+        y = 174.0
+    [[NOTE 7]]
+        text = ".10"
+        x = -379.0
+        y = -49.0
+    [[NOTE 8]]
+        text = ".20"
+        x = -42.0
+        y = -46.0
+    [[NOTE 9]]
+        text = "1. XAC THUC TREN R1: sU DUNG TELNET\n2. XAC THUC SU DUNG RADIUS\n3. BAT THONG TIN USER / PASS TREN WIRESHARK"
+        x = 209.0
+        y = -377.0
+        color = "#ff3426"
+    [[NOTE 10]]
+        text = "radiuus server"
+        x = 132.0
+        y = -6.0
+    [[NOTE 11]]
+        text = "test user"
+        x = -613.0
+        y = -15.0
+    [[Cloud C6]]
+        x = -19.5
+        y = 6.0
+        z = 1.0
+        connections = R2:f0/1:nio_gen_eth:\device\npf_{427ab383-f61e-4f62-9554-40c3686dae3f}
+    [[Cloud C5]]
+        x = -511.5
+        y = 4.0
+        z = 1.0
+        connections = R2:f0/0:nio_gen_eth:\device\npf_{fe556f14-42df-4943-81a2-3858186f7fd3}
+    [[NOTE 12]]
+        text = "f0/1"
+        x = 63.5354514148
+        y = 47.8376896586
+        interface = R2 f0/1
+    [[NOTE 13]]
+        text = "f0/0"
+        x = -115.554365001
+        y = 76.8153206333
+        interface = R2 f0/0

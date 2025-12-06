@@ -1,0 +1,13 @@
+1. An ninh mạng
+	+ ACL
+	+ IDS-IPS
+2. Firewall
+3. Thuật toán mã hóa
+	+ Python : Giải mã thông điệp
+	+ Hệ cơ số: 2phan, decimal, hexa
+	+ xor, base64, rsa.
+
+m = c^d mod n
+c = m^e mod n
+c^d = m^(d*e) = m mod n
+de = 1 (mod phi(n))

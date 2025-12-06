@@ -1,0 +1,51 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\LUONGX~1\AppData\Local\Temp
+    udp = 10001
+    [[2691]]
+        image = C:\Users\Luongxuannhat\Downloads\c2691-adventerprisek9-mz.124-16.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 2691
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = NIO_udp:30000:127.0.0.1:20000
+        f0/1 = NIO_udp:30001:127.0.0.1:20001
+        slot1 = NM-1FE-TX
+        f1/0 = R2 f0/1
+        x = -298.0
+        y = -8.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 2691
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = NIO_udp:30002:127.0.0.1:20002
+        f0/1 = R1 f1/0
+        x = 103.0
+        y = -5.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[Cloud C3]]
+        symbol = Host
+        x = 385.5
+        y = 169.5
+        z = 1.0
+        connections = R2:f0/0:nio_udp:30002:127.0.0.1:20002
+    [[Cloud C2]]
+        symbol = Host
+        x = -590.5
+        y = 167.5
+        z = 1.0
+        connections = R1:f0/1:nio_udp:30001:127.0.0.1:20001
+    [[Cloud C1]]
+        symbol = Host
+        x = -593.5
+        y = -243.5
+        z = 1.0
+        connections = R1:f0/0:nio_udp:30000:127.0.0.1:20000

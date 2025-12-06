@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE FILE_LIST [
+      <!ELEMENT Setup_Exe (#PCDATA)>
+      <!ELEMENT FILE_LIST (File*)>
+      <!ELEMENT File (Language,Version,Zip_File,Size_of_required_files_in_bytes,Files_to_be_uploaded,Readme,Router_Files_Mapping,Home_Files,File_Size)>
+      <!ELEMENT Language (#PCDATA)>
+      <!ELEMENT Version (#PCDATA)>
+      <!ELEMENT Zip_File (#PCDATA)>
+      <!ELEMENT Size_of_required_files_in_bytes (#PCDATA)>
+      <!ELEMENT Files_to_be_uploaded (#PCDATA)>
+      <!ELEMENT Readme (#PCDATA)>
+      <!ELEMENT Router_Files_Mapping (#PCDATA)>
+      <!ELEMENT Home_Files (#PCDATA)>
+      <!ELEMENT File_Size (#PCDATA)>
+]>
+<FILE_LIST>
+    <File>
+        <Language>English</Language>
+        <Version>2.5</Version>
+        <Zip_File>SDM-V25.zip</Zip_File>
+        <Setup_Exe>setup.exe</Setup_Exe>
+        <Size_of_required_files_in_bytes>9381168</Size_of_required_files_in_bytes>
+        <Files_to_be_uploaded>home.shtml:home.tar:sdm.tar:common.tar:sdmconfig-1701.cfg:sdmconfig-1710.cfg:sdmconfig-1711-1712.cfg:sdmconfig-1721.cfg:sdmconfig-1751-1760.cfg:sdmconfig-180x.cfg:sdmconfig-1811-1812.cfg:sdmconfig-18xx.cfg:sdmconfig-26xx.cfg:sdmconfig-2801.cfg:sdmconfig-2811.cfg:sdmconfig-28xx.cfg:sdmconfig-36xx-37xx.cfg:sdmconfig-38xx.cfg:sdmconfig-8xx.cfg:sdmconfig-83x.cfg:sdmconfig-sb10x.cfg:128MB.sdf:256MB.sdf</Files_to_be_uploaded>
+        <Readme>SDMv2.5-Readme.html</Readme>
+        <Router_Files_Mapping>C831=sdmconfig-83x.cfg:home.shtml:home.tar:es.tar:common.tar:attack-drop.sdf#
+	C836=sdmconfig-83x.cfg:home.shtml:home.tar:es.tar:common.tar:attack-drop.sdf#
+	C837=sdmconfig-83x.cfg:home.shtml:home.tar:es.tar:common.tar:attack-drop.sdf#
+	815=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:attack-drop.sdf#
+        857=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:attack-drop.sdf#
+	851=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:attack-drop.sdf#
+	871=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:128MB.sdf#
+	876=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:128MB.sdf#
+	877=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:128MB.sdf#
+	877-M=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:128MB.sdf#
+	878=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:128MB.sdf#
+	857W=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:attack-drop.sdf#
+        851W=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:attack-drop.sdf#
+        871W=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:attack-drop.sdf#
+        876W=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:128MB.sdf#
+        877W=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:128MB.sdf#
+        877W-M=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:128MB.sdf#
+        878W=sdmconfig-8xx.cfg:home.shtml:home.tar:es.tar:common.tar:wlanui.tar:128MB.sdf#
+	SB101=sdmconfig-sb10x.cfg:home.shtml:home.tar:es.tar:common.tar#
+	SB106=sdmconfig-sb10x.cfg:home.shtml:home.tar:es.tar:common.tar#
+	SB107=sdmconfig-sb10x.cfg:home.shtml:home.tar:es.tar:common.tar#
+	1701=sdmconfig-1701.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1710=sdmconfig-1710.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1711=sdmconfig-1711-1712.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1712=sdmconfig-1711-1712.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1721=sdmconfig-1721.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1751=sdmconfig-1751-1760.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1751-V=sdmconfig-1751-1760.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1760=sdmconfig-1751-1760.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	1760-V=sdmconfig-1751-1760.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+        1801=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+        1801-M=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+	1801W=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf:wlanui.tar#
+	1801W-M=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf:wlanui.tar#
+	1802=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+	1802W=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf:wlanui.tar#
+	1803=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+	1803W=sdmconfig-180x.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf:wlanui.tar#
+	1811W=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:wlanui.tar:128MB.sdf#
+	1812W=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:wlanui.tar:128MB.sdf#
+	1812W-J=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:wlanui.tar:128MB.sdf#
+	1811=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+	1812=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+        1812-J=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:128MB.sdf#
+        1812W-P=sdmconfig-1811-1812.cfg:home.shtml:home.tar:es.tar:sdm.tar:common.tar:wlanui.tar:128MB.sdf#
+	C1841=sdmconfig-18xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:128MB.sdf#
+	1841=sdmconfig-18xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2610XM=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2611XM=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2620XM=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2621XM=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2650XM=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2651XM=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2691=sdmconfig-26xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2801=sdmconfig-2801.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2811=sdmconfig-2811.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2821=sdmconfig-28xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	2851=sdmconfig-28xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3620=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3640=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3640-A=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3660=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3661=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3662=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3725=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3745=sdmconfig-36xx-37xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3825=sdmconfig-38xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	3845=sdmconfig-38xx.cfg:home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	7204VXR=home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	7206VXR=home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf#
+	7301=home.shtml:home.tar:sdm.tar:common.tar:attack-drop.sdf
+	</Router_Files_Mapping>
+        <Home_Files>home.tar:home.shtml</Home_Files>
+        <File_Size>sdmconfig-1721.cfg=2820#sdmconfig-sb10x.cfg=2868#home.tar=112704#sdmconfig-38xx.cfg=2816#sdmconfig-18xx.cfg=2812#sdm.tar=6389824#sdmconfig-2801.cfg=2812#sdmconfig-1710.cfg=2980#wlanui.tar=2242624#sdmconfig-26xx.cfg=2820#sdmconfig-83x.cfg=2868#sdmconfig-2811.cfg=2812#256MB.sdf=793804#sdmconfig-1751-1760.cfg=2824#sdmconfig-180x.cfg=3472#sdmconfig-8xx.cfg=3244#sdmconfig-28xx.cfg=2816#home.shtml=1104#sdmconfig-1701.cfg=3056#128MB.sdf=527916#sdmconfig-36xx-37xx.cfg=2824#attack-drop.sdf=242352#sdmconfig-1711-1712.cfg=3284#common.tar=1505344#es.tar=931904#sdmconfig-1811-1812.cfg=3344</File_Size>
+    </File>
+</FILE_LIST>

@@ -1,0 +1,58 @@
+R1
+
+conf ter
+int f0/0 
+ip address 10.1.1.1 255.255.255.0
+no shut
+int f0/1 
+ip address 10.2.2.1 255.255.255.0
+no shut
+exit
+
+
+CAU 1
+username teo secret 123 
+line vty 0 4
+login local
+transport input telnet
+
+caau 2
+
+username admin privilege 15 secret 123
+aaa new-model
+aaa authentication login DUONG_TRUY_CAP_TU_XA local
+line vty 0 4
+login authentication DUONG_TRUY_CAP_TU_XA
+
+CAU 3 DB treen win 7 (R1 conf)
+radius-server host 10.2.2.20 key WinRadius
+no radius-server host 10.2.2.20 auth-port 1645 acct-port 1646
+radius-server host 10.2.2.20 auth-port 1812 acct-port 1813 key WinRadius
+aaa authentication login CNTT group radius
+line vty 0 4
+login authentication CNTT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

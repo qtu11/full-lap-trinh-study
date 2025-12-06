@@ -1,0 +1,26 @@
+R2
+
+conf ter
+int f0/1
+ip address 192.168.12.81 255.255.255.0
+no shut
+int f0/0
+ip address 192.168.23.81 255.255.255.0
+no shut
+router eigrp 100
+network 0.0.0.0
+no auto-summary
+
+R1
+
+conf ter
+int f0/1
+ip address 192.168.12.80 255.255.255.0
+no shut
+int f0/0
+ip address 192.168.112.80 255.255.255.0
+no shut
+router eigrp 100
+network 0.0.0.0
+no auto-summary
+

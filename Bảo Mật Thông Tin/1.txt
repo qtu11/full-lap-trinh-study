@@ -1,0 +1,102 @@
+r1
+conf ter
+interface f0/1
+ip address 172.16.12.80 255.255.255.0
+no shutdown
+exit
+interface f0/0
+ip address 172.16.1.80 255.255.255.0
+no shutdown
+exit
+router eigrp 100
+network 0.0.0.0
+no auto-summary
+
+r2
+conf ter
+interface f0/1
+ip address 172.16.12.81 255.255.255.0
+no shutdown
+exit
+interface f0/0 
+ip address 172.16.2.81 255.255.255.0
+no shutdown
+exit
+router eigrp 100
+network 0.0.0.0
+no auto-summary
+
+ip 192.168.10.10 /24 192.168.10.1
+
+ip 192.168.110.10 /24 192.168.110.1
+
+ip 192.168.20.20 /24 192.168.20.2
+
+
+r2
+access-list 1 permit host 192.168.10.10
+interface f0/0 
+ip access-group 1 out
+
+R2(config)#no access-list 1
+R2(config)#interface f0/0
+R2(config-if)#no ip access-group 1 out
+R2(config-if)#exit
+
+r2( cang gan dich cang tot )
+
+access-list 2 deny host 192.168.10.10
+access-list 2 permit any
+interface f0/0 
+ip access-group 2 out
+
+
+
+
+*****************************************
+r1
+conf ter
+interface f0/0 
+ip address 192.168.112.80 255.255.255.0
+no shutdown
+exit
+interface f0/1 
+ip address 192.168.12.80 255.255.255.0
+no shutdown
+exit	
+router eigrp 100
+network 0.0.0.0
+no auto-summary
+
+r2
+conf ter
+interface f0/0 
+ip address 192.168.23.81 255.255.255.0
+no shutdown
+exit
+interface f0/1 
+ip address 192.168.12.81 255.255.255.0
+no shutdown
+exit	
+router eigrp 100
+network 0.0.0.0
+no auto-summary
+
+
+caaus hinhf wwin 7,wwin 12 
+ncpa.cpl
+
+
+ip access-group 100 in
+R2--------
+
+ip http server
+ip http authentication local
+username TEO privilege 15 password 123
+live vty 0 4
+privilege level 15
+login local
+transport input telnet
+logging buffered 51200 warning
+
+

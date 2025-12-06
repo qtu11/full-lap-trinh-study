@@ -1,0 +1,112 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\LUONGX~1\AppData\Local\Temp
+    udp = 10001
+    [[2691]]
+        image = C:\Users\Luongxuannhat\Downloads\c2691-adventerprisek9-mz.124-16.image
+        idlepc = 0x60a311d4
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 2691
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = NIO_udp:30000:127.0.0.1:20000
+        f0/1 = R2 f0/1
+        x = -818.0
+        y = -166.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 2691
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = NIO_udp:30001:127.0.0.1:20001
+        f0/1 = R1 f0/1
+        x = -361.0
+        y = -166.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "Client\n"
+        x = -363.0
+        y = 107.5
+    [[NOTE 2]]
+        text = "Sevver"
+        x = -817.0
+        y = 113.5
+    [[NOTE 3]]
+        text = ".80"
+        x = -803.0
+        y = -227.5
+    [[NOTE 4]]
+        text = ".80"
+        x = -856.0
+        y = -129.5
+    [[NOTE 5]]
+        text = ".80"
+        x = -391.0
+        y = 43.5
+    [[NOTE 6]]
+        text = ".81"
+        x = -865.0
+        y = 40.5
+    [[NOTE 7]]
+        text = ".81"
+        x = -421.0
+        y = -180.5
+    [[NOTE 8]]
+        text = ".81"
+        x = -379.0
+        y = -113.5
+    [[NOTE 9]]
+        text = "172.16.2.0/24"
+        x = -473.0
+        y = -56.5
+    [[NOTE 10]]
+        text = "172.16.12.0/24"
+        x = -627.0
+        y = -174.5
+    [[NOTE 11]]
+        text = "172.16.1.0/24"
+        x = -782.0
+        y = -57.5
+    [[NOTE 12]]
+        text = "f0/0"
+        x = 36.6033797535
+        y = 61.8373650528
+        interface = R2 f0/0
+    [[NOTE 13]]
+        text = "f0/1"
+        x = -45.9995867833
+        y = 20.8181836964
+        interface = R2 f0/1
+    [[NOTE 14]]
+        text = "f0/1"
+        x = 72.9995867833
+        y = 22.1818163036
+        interface = R1 f0/1
+    [[NOTE 15]]
+        text = "f0/0"
+        x = 36.0910562761
+        y = 61.8940853562
+        interface = R1 f0/0
+    [[Cloud C2]]
+        symbol = server
+        x = -813.5
+        y = 20.5
+        hx = 18.5
+        hy = 65.0
+        z = 1.0
+        connections = R1:f0/0:NIO_udp:30000:127.0.0.1:20000
+    [[Cloud C1]]
+        symbol = Host
+        x = -359.5
+        y = 25.5
+        hx = 18.5
+        hy = 57.0
+        z = 1.0
+        connections = R2:f0/0:NIO_udp:30001:127.0.0.1:20001

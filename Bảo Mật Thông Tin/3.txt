@@ -1,0 +1,62 @@
+1. Cấm máy win7 -> 2k12
+
+Ap dụng lên cổng 
+f0/1 R1
+
+
+ip access-list extended CHIEU_OUT 
+permit icmp any any reflect HUTECH
+
+ip access-list extended CHIEU_IN
+permit eigrp any any
+evaluate HUTECH
+
+inter f0/1
+ip access-group CHIEU_OUT out
+ip access-group CHIEU_IN in
+
+
+inter f0/1
+no ip access-group CHIEU_OUT out
+no ip access-group CHIEU_IN in
+
+r2
+
+int f0/0
+ip access-list extended HTTP_VLAN_10
+dynamic HTTP_ACCESS timeout 60 permit tcp any any eq 80
+deny tcp any any eq 80
+permit ip any any
+exit
+
+username NHAT password 123
+username NHAT autocommand access-enable host timeout 5
+line vty 0 4
+login local
+exit
+access-list dynamic-extended
+int f0/0
+ip access-group HTTP_VLAN_10 in
+
+câu 3:Cho phép truy cập web
+apdung R2 (f0/0)
+
+int f0/0
+no ip access-group WEB_HUTECH in
+
+time-range TRUY_CAP_WEBB
+periodic weekdays 12:00 to 13:29
+
+ip access-list extened HUTECHH
+permit tcp any any eq 80 time-range TRUY_CAP_WEBB
+
+int f0/0
+ip access-group HUTECHH in
+
+clock set 12:03:00 Aug 31 2022
+
+kiểm tra chính sách: do sh ip access-list
+
+
+
+

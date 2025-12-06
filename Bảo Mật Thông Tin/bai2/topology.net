@@ -1,0 +1,91 @@
+autostart = False
+version = 0.8.6
+[127.0.0.1:7200]
+    workingdir = C:\Users\LUONGX~1\AppData\Local\Temp
+    udp = 10001
+    [[2691]]
+        image = C:\Users\Luongxuannhat\Downloads\c2691-adventerprisek9-mz.124-16.image
+        sparsemem = True
+        ghostios = True
+    [[ROUTER R1]]
+        model = 2691
+        console = 2101
+        aux = 2501
+        cnfg = configs\R1.cfg
+        f0/0 = nio_gen_eth:\device\npf_{fe556f14-42df-4943-81a2-3858186f7fd3}
+        f0/1 = R2 f0/1
+        x = -366.0
+        y = -152.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 2691
+        console = 2102
+        aux = 2502
+        cnfg = configs\R2.cfg
+        f0/0 = nio_gen_eth:\device\npf_{427ab383-f61e-4f62-9554-40c3686dae3f}
+        f0/1 = R1 f0/1
+        x = 57.0
+        y = -152.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = "192.168.10.10/24\nSM /8\nG/w: 192.168.10.1"
+        x = -438.0
+        y = 118.0
+    [[NOTE 2]]
+        text = ".10"
+        x = -320.0
+        y = 39.0
+    [[NOTE 3]]
+        text = "192.168.20.20/24\nSM /8\nG/w: 192.168.20.2"
+        x = 21.0
+        y = 107.0
+    [[NOTE 4]]
+        text = ".2"
+        x = 37.0
+        y = -178.0
+    [[NOTE 5]]
+        text = ".2"
+        x = 54.0
+        y = -90.0
+    [[NOTE 6]]
+        text = ".1"
+        x = -414.0
+        y = -125.0
+    [[NOTE 7]]
+        text = ".1"
+        x = -314.0
+        y = -193.0
+    [[NOTE 8]]
+        text = ".20"
+        x = 46.0
+        y = 23.0
+    [[NOTE 9]]
+        text = "192.168.12.0/24"
+        x = -258.0
+        y = -181.0
+    [[NOTE 10]]
+        text = "192.168.20.0/24"
+        x = 121.0
+        y = -57.0
+    [[NOTE 11]]
+        text = "192.168.10.0/24"
+        x = -546.0
+        y = -63.0
+    [[Cloud C2]]
+        symbol = computer
+        x = 70.5
+        y = 11.0
+        hx = 37.5
+        hy = -30.0
+        z = 1.0
+        connections = R2:f0/0:nio_gen_eth:\device\npf_{427ab383-f61e-4f62-9554-40c3686dae3f}
+    [[Cloud C1]]
+        symbol = server
+        x = -386.5
+        y = 6.0
+        hx = 35.5
+        hy = -26.0
+        z = 1.0
+        connections = R1:f0/0:nio_gen_eth:\device\npf_{fe556f14-42df-4943-81a2-3858186f7fd3}
